@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.static('client/dist'));
 
 //get requests
-app.get('/entries', controllers.get);
+app.get('/entries/:id', controllers.get);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)

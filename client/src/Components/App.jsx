@@ -6,11 +6,12 @@ class App extends React.components {
     super(props);
     this.state = {
       data: [];
+      last: 'null';
     }
   }
 
   getData() {
-    axios.get('/entries').then((results) => {
+    axios.get(`/entries/${this.state.last}`).then((results) => {
       this.setState({
         data: results.data;
       })
