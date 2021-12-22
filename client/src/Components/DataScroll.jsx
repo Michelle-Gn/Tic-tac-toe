@@ -8,15 +8,28 @@ class DataScroll extends React.Component {
       data: [],
       loading: false,
       last: 'null',
-      prev: 'null'
+      prevY: 0
     };
 
     this.getData = this.getData.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     this.getData(this.state.last);
+
+    var options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 1.0
+    };
+
+    this.observer = new IntersectionObserver(
+      this.handleObserver.bind(this),
+      options
+    );
+
+    this.observer.observe(this.loadingRef);
+
   }
 
   getData(lastID) {
@@ -37,22 +50,39 @@ class DataScroll extends React.Component {
     });
   }
 
-  handleClick(lastID) {
-    this.getData(lastID);
+  handleObserver(entities, observer) {
+    const y = entities[0].boundingClientRect.y;
+    if (this.state.prevY > y) {
+      this.getData(this.state.last);
+    }
+    this.setState({ prevY: y });
   }
 
   render() {
+    // Aditional css
+    const loadingCSS = {
+      height: "100px",
+      margin: "30px"
+    }
+
     return(
-    <div>
+    <div className="container">
+      <div style={{ minHeight: "75px"}}>
       {this.state.data.map((element, index) => (
         <div key={index}>
           {element.Name}
           {element.Salary}
         </div>
         ))}
-    <button onClick={() => {this.handleClick(this.state.last)}}>Get Next Five</button>
+      </div>
+      <div
+        ref={loadingRef => (this.loadingRef = loadingRef)}
+        style={loadingCSS}
+      >
+        <span style={loadingTextCSS}>Loading...</span>
+      </div>
     </div>
-    )
+    );
   }
 
 }
