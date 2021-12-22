@@ -3,7 +3,7 @@ var SRC_DIR =  `${__dirname}/client/src`;
 var DIST_DIR = `${__dirname}/client/dist`;
 
 module.exports = {
-  entry: `${SRC_DIR}/index.js`,
+  entry: `${SRC_DIR}/index.jsx`,
   output: {
     filename: 'bundle.js',
     path: DIST_DIR
