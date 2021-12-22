@@ -1,0 +1,1 @@
+// mongoimport -d tracer -c entries --type csv --file /Users/michelleguan/Applications/Tic-tac-toe/Sample_Data.csv --headerline
