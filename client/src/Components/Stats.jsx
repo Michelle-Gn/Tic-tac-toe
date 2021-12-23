@@ -13,9 +13,13 @@ class Stats extends React.Component {
   render() {
     return (
     <div id="stats">
-      <h2>Employees</h2>
-      <div>{this.state.totalRecords}</div>
-      <div>{this.state.trimmedAverage}</div>
+      <div id="title">
+        <h3>Employees</h3>
+      </div>
+      <div id="reported-stats">
+        <div>{this.state.totalRecords}</div>
+        <div>{this.state.trimmedAverage}</div>
+      </div>
     </div>
     )
   }

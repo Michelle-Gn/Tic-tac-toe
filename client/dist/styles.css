@@ -19,16 +19,51 @@
   width: 90%;
   height: 700px;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .container {
-  width: 80%;
-  max-height: 800px;
+  width: 90%;
+  max-height: 400px;
   overflow-y: auto;
 }
 
 #stats-buttons {
-  width: 80%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#stats {
+  background-color: yellow;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#title {
+  width: 60px;
+  height: 30px;
+  background-color: red;
+  text-align: center;
+}
+
+#reported-stats {
+  width: 60px;
+  height: 30px;
+  background-color: blue;
+}
+
+#functional-buttons {
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 #data-list {
@@ -46,7 +81,7 @@
 }
 
 #label-bar {
-  width: 75%;
+  width: 90%;
   height: 10px;
   display: flex;
   padding: 10px;

@@ -23,8 +23,14 @@ class App extends React.Component {
         <div id="sub-container">
           <div id="stats-buttons">
             <Stats/>
-            <Download/>
-            <Add/>
+            <div id="functional-buttons">
+              <div id="download">
+              <Download/>
+              </div>
+              <div id="add">
+              <Add/>
+              </div>
+            </div>
           </div>
             <LabelBar/>
             <DataScroll/>
