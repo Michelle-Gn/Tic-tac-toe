@@ -47,11 +47,10 @@
 
 #label-bar {
   width: 75%;
-  height: 15px;
-  border: solid 1px #000;
+  height: 10px;
   display: flex;
   padding: 10px;
   justify-content: space-between;
-  background-color: green;
+  background-color: greenyellow;
 }
 
