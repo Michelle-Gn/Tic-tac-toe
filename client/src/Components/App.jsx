@@ -12,7 +12,10 @@ class App extends React.Component {
 
   render() {
     return(
-    <DataScroll/>
+      <div>
+        <div>Tic-tac-toe</div>
+        <DataScroll/>
+      </div>
     )
   }
 }

@@ -65,14 +65,21 @@ class DataScroll extends React.Component {
       margin: "30px"
     }
 
+    // Change loading icon behavior
+    const loadingTextCSS = { display: this.state.laoding ? "block" : "none"};
+
     return(
     <div className="container">
-      <div style={{ minHeight: "75px"}}>
+      <div id="data-list">
       {this.state.data.map((element, index) => (
-        <div key={index}>
+      <div id="data-entry" key={index}>
+        <div id="name">
           {element.Name}
+        </div>
+        <div id="salary">
           {element.Salary}
         </div>
+      </div>
         ))}
       </div>
       <div

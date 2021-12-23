@@ -1,0 +1,26 @@
+.container {
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+#data-list {
+  background-color: red
+}
+
+#data-entry{
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: yellow
+}
+
+#name{
+  display: inline;
+  background-color: purple
+}
+
+#salary{
+  background-color: red;
+  float: right;
+}
+
+
