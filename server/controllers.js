@@ -17,6 +17,18 @@ var controllers = {
         res.status(500).send(err);
       })
     }
+  },
+
+  post: function(req, res) {
+    var entry = req.body;
+
+    Entry.create(entry).then(() => {
+      console.log(`${entry.Name} added with a value of ${entry.Salary}`)
+      res.status(200).send(`${entry.Name} added with a value of ${entry.Salary}`);
+    }).catch((err) => {
+      console.log(err);
+      res.status(400).send(err);
+    })
   }
 }
 

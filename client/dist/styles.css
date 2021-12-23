@@ -1,26 +1,61 @@
+#app-container {
+  background-color: #F1F1F1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+  height: 100%;
+}
+
+#picture {
+  width: 90%;
+  background-color: #F1F1F1;
+  display: flex;
+  justify-content: center;
+}
+
+#sub-container{
+  width: 90%;
+  height: 700px;
+  background-color: white;
+}
+
 .container {
+  width: 80%;
   max-height: 800px;
   overflow-y: auto;
+}
+
+#stats-buttons {
+  width: 80%;
 }
 
 #data-list {
   background-color: red
 }
 
-#data-entry{
-  margin-left: 20px;
-  margin-right: 20px;
+#data-entry {
   background-color: yellow
 }
 
-#name{
+#name {
   display: inline;
   background-color: purple
 }
 
-#salary{
+#salary {
   background-color: red;
   float: right;
 }
 
+#label-bar {
+  width: 75%;
+  height: 15px;
+  border: solid 1px #000;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  background-color: green;
+}
 

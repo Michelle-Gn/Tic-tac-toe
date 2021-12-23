@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const entrySchema = new mongoose.Schema({
-  employee: String,
-  salary: Number
+  Name: String,
+  Salary: Number
 });
 
 const Entry = mongoose.model('Entry', entrySchema);
