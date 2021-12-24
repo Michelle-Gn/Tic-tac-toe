@@ -5,9 +5,36 @@ class Stats extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
-      totalRecords: 1,
-      trimmedAverage: 2
+      totalRecords: '',
+      average: ''
     }
+    this.getRecords = this.getRecords.bind(this);
+    this.getAverage = this.getAverage.bind(this);
+  }
+
+  componentDidMount() {
+    this.getRecords();
+    this.getAverage();
+  }
+
+  getRecords() {
+    axios.get('/count').then((result) => {
+      this.setState({
+        totalRecords: result.data.toLocaleString()
+      })
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+
+  getAverage() {
+    axios.get('/average').then((result) => {
+      this.setState({
+        average: Math.round(result.data[0].AverageValue).toLocaleString()
+      })
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 
   render() {
@@ -15,7 +42,7 @@ class Stats extends React.Component {
     <div id="stats">
         <div>Employees</div>
         <div>Total Records: {this.state.totalRecords}</div>
-        <div>Trimmed Average: {this.state.trimmedAverage}</div>
+        <div>Average: {this.state.average}</div>
     </div>
     )
   }

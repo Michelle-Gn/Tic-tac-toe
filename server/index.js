@@ -9,6 +9,8 @@ app.use(express.static('client/dist'));
 
 //get requests
 app.get('/entries/:id', controllers.get);
+app.get('/count', controllers.getRecordCount);
+app.get('/average', controllers.getTrimmedAverage);
 app.post('/entries', controllers.post);
 
 app.listen(port, () => {
