@@ -22,7 +22,9 @@ class App extends React.Component {
         </div>
         <div id="sub-container">
           <div id="stats-buttons">
+            <div id="stats-bar">
             <Stats/>
+            </div>
             <div id="functional-buttons">
               <div id="download">
               <Download/>

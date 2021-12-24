@@ -37,47 +37,64 @@
   justify-content: space-between;
 }
 
-#stats {
-  background-color: yellow;
-  height: 60px;
+#stats-bar {
+  height: 100px;
   display: flex;
-  justify-content: center;
   align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-#title {
-  width: 60px;
-  height: 30px;
-  background-color: red;
-  text-align: center;
-}
-
-#reported-stats {
-  width: 60px;
-  height: 30px;
-  background-color: blue;
+#stats{
+  height: 60px;
 }
 
 #functional-buttons {
-  background-color: yellow;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
 }
 
-#data-list {
-  background-color: red
+
+
+#name-salary {
+  border-bottom: solid 1px #F1F1F1;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: space-between;
 }
 
-#name {
-  display: inline;
-  background-color: purple
+.name {
+  max-width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
 
-#salary {
-  background-color: red;
-  float: right;
+.salary {
+  max-width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.salary-text{
+  height: 20px;
+}
+
+.icon {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: orange;
+  margin-right: 5px;
 }
 
 #label-bar {
@@ -86,6 +103,25 @@
   display: flex;
   padding: 10px;
   justify-content: space-between;
-  background-color: greenyellow;
+  background-color: #A0D2BE;
+}
+
+/*buttons*/
+
+.button {
+  background-color: white;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: 5px;
+}
+
+.button:hover {
+  background-color: #277985;
+  color: white;
 }
 

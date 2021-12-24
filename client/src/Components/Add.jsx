@@ -11,7 +11,7 @@ class Add extends React.Component {
 
   render() {
     return (
-      <button>Add</button>
+       <button className="button">Add</button>
     )
   }
 }

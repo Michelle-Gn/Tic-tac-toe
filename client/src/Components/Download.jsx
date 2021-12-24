@@ -2,7 +2,7 @@ import React from 'react';
 
 var Download = (props) => {
   return (
-    <button>Download</button>
+      <button className="button">Download</button>
   )
 }
 

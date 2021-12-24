@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import DataEntry from './DataEntry.jsx';
 
 class DataScroll extends React.Component {
   constructor (props) {
@@ -72,14 +73,7 @@ class DataScroll extends React.Component {
     <div className="container">
       <div id="data-list">
       {this.state.data.map((element, index) => (
-      <div id="data-entry" key={index}>
-        <div id="name">
-          {element.Name}
-        </div>
-        <div id="salary">
-          {element.Salary}
-        </div>
-      </div>
+        <DataEntry index={index} element={element}/>
         ))}
       </div>
       <div
