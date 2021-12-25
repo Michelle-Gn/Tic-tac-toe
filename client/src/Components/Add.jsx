@@ -4,17 +4,36 @@ class Add extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      show: false;
+    }
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+
+    handleShow () {
+      this.setState({
+        show: true
+      })
+    }
+
+    handleClose () {
+      this.setState({
+        show: false
+      })
+    }
+
+    handleChange () {
 
     }
 
-    render() {
+    render () {
       return (
         <>
           <button className="button" onClick={handleShow}>
             Add
           </button>
 
-          <Modal show={show} onHide={handleClose}>
+          <Modal show={this.state.show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Add Entry</Modal.Title>
             </Modal.Header>
