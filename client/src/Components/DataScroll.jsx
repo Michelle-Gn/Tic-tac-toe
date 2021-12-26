@@ -6,17 +6,12 @@ class DataScroll extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      data: [],
-      loading: false,
-      last: 'null',
-      prevY: 0
     };
 
-    this.getData = this.getData.bind(this);
   }
 
   componentDidMount() {
-    this.getData(this.state.last);
+    this.props.getData(this.props.state.last);
 
     var options = {
       root: null,
@@ -25,38 +20,12 @@ class DataScroll extends React.Component {
     };
 
     this.observer = new IntersectionObserver(
-      this.handleObserver.bind(this),
+      this.props.handleObserver.bind(this),
       options
     );
 
     this.observer.observe(this.loadingRef);
 
-  }
-
-  getData(lastID) {
-    this.setState({
-      loading: true
-    });
-
-    axios.get(`/entries/${lastID}`).then((results) => {
-      this.setState({
-        data: [...this.state.data, ...results.data]
-      });
-      this.setState({
-        loading: false
-      });
-      this.setState({
-        last: this.state.data[this.state.data.length - 1]._id
-      })
-    });
-  }
-
-  handleObserver(entities, observer) {
-    const y = entities[0].boundingClientRect.y;
-    if (this.state.prevY > y) {
-      this.getData(this.state.last);
-    }
-    this.setState({ prevY: y });
   }
 
   render() {
@@ -67,15 +36,13 @@ class DataScroll extends React.Component {
     }
 
     // Change loading icon behavior
-    const loadingTextCSS = { display: this.state.laoding ? "block" : "none"};
+    const loadingTextCSS = { display: this.state.loading ? "block" : "none"};
 
     return(
-    <div className="container">
-      <div id="data-list">
-      {this.state.data.map((element, index) => (
+    <div id="data-container">
+      {this.props.state.data.map((element, index) => (
         <DataEntry index={index} element={element}/>
         ))}
-      </div>
       <div
         ref={loadingRef => (this.loadingRef = loadingRef)}
         style={loadingCSS}

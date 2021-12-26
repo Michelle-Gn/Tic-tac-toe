@@ -10,8 +10,40 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: [],
+      loading: false,
+      last: 'null',
+      prevY: 0
+    };
 
+    this.getData = this.getData.bind(this);
+    this.handleObserver = this.handleObserver.bind(this);
+  }
+
+  getData(lastID) {
+    this.setState({
+      loading: true
+    });
+
+    axios.get(`/entries/${lastID}`).then((results) => {
+      this.setState({
+        data: [...this.state.data, ...results.data]
+      });
+      this.setState({
+        loading: false
+      });
+      this.setState({
+        last: this.state.data[this.state.data.length - 1]._id
+      })
+    });
+  }
+
+  handleObserver(entities, observer) {
+    const y = entities[0].boundingClientRect.y;
+    if (this.state.prevY > y) {
+      this.getData(this.state.last);
     }
+    this.setState({ prevY: y });
   }
 
   render() {
@@ -30,12 +62,14 @@ class App extends React.Component {
               <Download/>
               </div>
               <div id="add">
-              <Add/>
+              <Add getData={this.getData}/>
               </div>
             </div>
           </div>
             <LabelBar/>
-            <DataScroll/>
+            <DataScroll state={this.state}
+            getData={this.getData}
+            handleObserver={this.handleObserver}/>
         </div>
       </div>
     )

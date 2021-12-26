@@ -17,7 +17,7 @@ var DataEntry = (props) => {
   }
 
     return (
-    <div id="name-salary" key={props.index}>
+    <div className="name-salary" key={props.index}>
       <div className="name">
         <div className="icon" style={style}>
           {props.element.Name[0]}

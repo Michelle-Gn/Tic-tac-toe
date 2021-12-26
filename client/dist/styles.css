@@ -25,10 +25,12 @@
   flex-wrap: wrap;
 }
 
-.container {
+#data-container {
+  background-color:white;
   width: 90%;
-  max-height: 400px;
+  height: 400px;
   overflow-y: auto;
+  margin-top: 15px;
 }
 
 #stats-buttons {
@@ -56,9 +58,7 @@
   flex-wrap: wrap;
 }
 
-
-
-#name-salary {
+.name-salary {
   border-bottom: solid 1px #F1F1F1;
   display: flex;
   width: 100%;
@@ -95,7 +95,7 @@
 
 #label-bar {
   width: 90%;
-  height: 10px;
+  height: 35px;
   display: flex;
   padding: 10px;
   justify-content: space-between;
@@ -108,11 +108,11 @@
   background-color: white;
   color: black;
   border: 1px solid gray;
-  border-radius: 12px;
+  border-radius: 40px;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
   margin-left: 5px;
 }
 
