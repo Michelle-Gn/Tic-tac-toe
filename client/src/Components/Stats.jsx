@@ -40,7 +40,9 @@ class Stats extends React.Component {
   render() {
     return (
     <div id="stats">
-        <div>Employees</div>
+        <div>
+          <h4>Employees</h4>
+        </div>
         <div>Total Records: {this.state.totalRecords}</div>
         <div>Average: {this.state.average}</div>
     </div>

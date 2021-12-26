@@ -100,6 +100,7 @@
   padding: 10px;
   justify-content: space-between;
   background-color: #A0D2BE;
+  margin-top: 10px;
 }
 
 /*buttons*/
@@ -121,3 +122,7 @@
   color: white;
 }
 
+/* misc. font size*/
+h3 {
+  font-size: 50px;
+}
